@@ -1,0 +1,716 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "ckeditor.fields",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "ckeditor.fields",
+        "description": "ckeditor.fields",
+        "detail": "ckeditor.fields",
+        "documentation": {}
+    },
+    {
+        "label": "RichTextField",
+        "importPath": "ckeditor.fields",
+        "description": "ckeditor.fields",
+        "isExtraImport": true,
+        "detail": "ckeditor.fields",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseRedirect",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.template.defaultfilters",
+        "description": "django.template.defaultfilters",
+        "isExtraImport": true,
+        "detail": "django.template.defaultfilters",
+        "documentation": {}
+    },
+    {
+        "label": "Count",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "agriculture.asgi",
+        "description": "agriculture.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "agriculture.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-sx8r)!bd4cec*4mdr2%d(%5oup_bxb4e+h3#k+dm6uwf(oov!2'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-sx8r)!bd4cec*4mdr2%d(%5oup_bxb4e+h3#k+dm6uwf(oov!2'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'company',",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'company',\n    'crispy_forms',\n    'crispy_bootstrap5',",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'agriculture.urls'",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "ROOT_URLCONF = 'agriculture.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'agriculture.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': str(BASE_DIR / 'db.sqlite3'),\n    }\n}\n# Password validation",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': str(BASE_DIR / 'db.sqlite3'),\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSTATIC_URL = '/static/'",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSTATIC_URL = '/static/'\nMEDIA_URL = '/media/'",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_L10N",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSTATIC_URL = '/static/'\nMEDIA_URL = '/media/'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'static/')",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSTATIC_URL = '/static/'\nMEDIA_URL = '/media/'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'static/')\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSTATIC_URL = '/static/'\nMEDIA_URL = '/media/'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'static/')\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# CRISPY_TEMPLATE_PACK = 'uni_form'\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"bootstrap5\"\nCRISPY_TEMPLATE_PACK = \"bootstrap5\"",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "STATIC_URL = '/static/'\nMEDIA_URL = '/media/'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'static/')\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# CRISPY_TEMPLATE_PACK = 'uni_form'\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"bootstrap5\"\nCRISPY_TEMPLATE_PACK = \"bootstrap5\"",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'static/')\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# CRISPY_TEMPLATE_PACK = 'uni_form'\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"bootstrap5\"\nCRISPY_TEMPLATE_PACK = \"bootstrap5\"",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'static/')\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# CRISPY_TEMPLATE_PACK = 'uni_form'\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"bootstrap5\"\nCRISPY_TEMPLATE_PACK = \"bootstrap5\"",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# CRISPY_TEMPLATE_PACK = 'uni_form'\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"bootstrap5\"\nCRISPY_TEMPLATE_PACK = \"bootstrap5\"",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CRISPY_ALLOWED_TEMPLATE_PACKS",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "CRISPY_ALLOWED_TEMPLATE_PACKS = \"bootstrap5\"\nCRISPY_TEMPLATE_PACK = \"bootstrap5\"",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CRISPY_TEMPLATE_PACK",
+        "kind": 5,
+        "importPath": "agriculture.settings",
+        "description": "agriculture.settings",
+        "peekOfCode": "CRISPY_TEMPLATE_PACK = \"bootstrap5\"",
+        "detail": "agriculture.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "agriculture.urls",
+        "description": "agriculture.urls",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('company.urls')),\n]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "detail": "agriculture.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "agriculture.wsgi",
+        "description": "agriculture.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "agriculture.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "company.migrations.0001_initial",
+        "description": "company.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Article',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "company.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "CompanyConfig",
+        "kind": 6,
+        "importPath": "company.apps",
+        "description": "company.apps",
+        "peekOfCode": "class CompanyConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'company'",
+        "detail": "company.apps",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterForm",
+        "kind": 6,
+        "importPath": "company.forms",
+        "description": "company.forms",
+        "peekOfCode": "class RegisterForm(forms.Form):\n    username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))\n    email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))\n    password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}))\n    password_repeat = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}))\n    first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))\n    last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))\n    phone_number = forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}), required=False)\nclass ArticleForm(forms.ModelForm):\n    class Meta:",
+        "detail": "company.forms",
+        "documentation": {}
+    },
+    {
+        "label": "ArticleForm",
+        "kind": 6,
+        "importPath": "company.forms",
+        "description": "company.forms",
+        "peekOfCode": "class ArticleForm(forms.ModelForm):\n    class Meta:\n        model = Article\n        fields = [\n            \"title\",\n            \"content\",\n            \"article_image\",\n        ]",
+        "detail": "company.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Article",
+        "kind": 6,
+        "importPath": "company.models",
+        "description": "company.models",
+        "peekOfCode": "class Article(models.Model):\n    author = models.ForeignKey(\"auth.User\",on_delete = models.CASCADE)\n    title = models.CharField(max_length = 50)\n    content = RichTextField()\n    created_date = models.DateTimeField(auto_now_add=True)\n    article_image = models.FileField(upload_to='files/', blank = True,null = True)\n    slug = models.SlugField(unique=True, max_length=100)\n    def __str__(self):\n        return self.title\n    def save(self, *args, **kwargs):",
+        "detail": "company.models",
+        "documentation": {}
+    },
+    {
+        "label": "Comment",
+        "kind": 6,
+        "importPath": "company.models",
+        "description": "company.models",
+        "peekOfCode": "class Comment(models.Model):\n    article = models.ForeignKey(Article,on_delete = models.CASCADE,related_name=\"comments\")\n    comment_author = models.CharField(max_length = 50)\n    comment_content = models.CharField(max_length = 200)\n    comment_date = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return self.comment_content\n    class Meta:\n        ordering = ['-comment_date']",
+        "detail": "company.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "company.urls",
+        "description": "company.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', home, name='home'),\n    path('about', about, name='about'),\n    path('register/', views.user_register, name='user_register'),\n    path('login/', views.user_login, name='user_login'),\n    path('logout/', views.user_logout, name='user_logout'),\n    path('dashboard/',views.dashboard,name = \"dashboard\"),\n    path('addarticle/',views.addArticle,name = \"addarticle\"),\n    path('article/<slug:slug>/',views.detail,name = \"detail\"),\n    path('update/<slug:slug>',views.updateArticle,name = \"update\"),",
+        "detail": "company.urls",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "company.views",
+        "description": "company.views",
+        "peekOfCode": "def home(request):\n    return render(request, 'company/home.html')\ndef about(request):\n    return render(request, 'company/about.html')\n# def register(request):\n#     if request.method == 'POST':\n#         email = request.POST['email']\n#         username = request.POST['username']\n#         phone_number = request.POST['phone_number']\n#         password1 = request.POST['password1']",
+        "detail": "company.views",
+        "documentation": {}
+    },
+    {
+        "label": "about",
+        "kind": 2,
+        "importPath": "company.views",
+        "description": "company.views",
+        "peekOfCode": "def about(request):\n    return render(request, 'company/about.html')\n# def register(request):\n#     if request.method == 'POST':\n#         email = request.POST['email']\n#         username = request.POST['username']\n#         phone_number = request.POST['phone_number']\n#         password1 = request.POST['password1']\n#         password2 = request.POST['password2']\n#         if password1 != password2:",
+        "detail": "company.views",
+        "documentation": {}
+    },
+    {
+        "label": "user_register",
+        "kind": 2,
+        "importPath": "company.views",
+        "description": "company.views",
+        "peekOfCode": "def user_register(request):\n    # if this is a POST request we need to process the form data\n    template = 'registration/register.html'\n    if request.method == 'POST':\n        # create a form instance and populate it with data from the request:\n        form = RegisterForm(request.POST)\n        # check whether it's valid:\n        if form.is_valid():\n            if User.objects.filter(username=form.cleaned_data['username']).exists():\n                return render(request, template, {",
+        "detail": "company.views",
+        "documentation": {}
+    },
+    {
+        "label": "user_login",
+        "kind": 2,
+        "importPath": "company.views",
+        "description": "company.views",
+        "peekOfCode": "def user_login(request):\n    if request.method == 'POST':\n        # Process the request if posted data are available\n        username = request.POST['username']\n        password = request.POST['password']\n        # Check username and password combination if correct\n        user = authenticate(username=username, password=password)\n        if user is not None:\n            # Save session as cookie to login the user\n            login(request, user)",
+        "detail": "company.views",
+        "documentation": {}
+    },
+    {
+        "label": "user_logout",
+        "kind": 2,
+        "importPath": "company.views",
+        "description": "company.views",
+        "peekOfCode": "def user_logout(request):\n    logout(request)\n    return redirect('home')\ndef articles(request):\n    keyword = request.GET.get(\"keyword\")\n    if keyword:\n        articles = Article.objects.filter(title__contains = keyword)\n        return render(request,\"company/articles.html\",{\"articles\":articles})\n    articles = Article.objects.all()\n    return render(request,\"company/articles.html\",{\"articles\":articles})",
+        "detail": "company.views",
+        "documentation": {}
+    },
+    {
+        "label": "articles",
+        "kind": 2,
+        "importPath": "company.views",
+        "description": "company.views",
+        "peekOfCode": "def articles(request):\n    keyword = request.GET.get(\"keyword\")\n    if keyword:\n        articles = Article.objects.filter(title__contains = keyword)\n        return render(request,\"company/articles.html\",{\"articles\":articles})\n    articles = Article.objects.all()\n    return render(request,\"company/articles.html\",{\"articles\":articles})\ndef dashboard(request):\n    articles = Article.objects.filter(author = request.user)\n    context = {",
+        "detail": "company.views",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard",
+        "kind": 2,
+        "importPath": "company.views",
+        "description": "company.views",
+        "peekOfCode": "def dashboard(request):\n    articles = Article.objects.filter(author = request.user)\n    context = {\n        \"articles\":articles\n    }\n    return render(request,\"company/dashboard.html\",context)\n# @login_required(login_url = \"user:login\")\ndef addArticle(request):\n    form = ArticleForm(request.POST or None,request.FILES or None)\n    if form.is_valid():",
+        "detail": "company.views",
+        "documentation": {}
+    },
+    {
+        "label": "addArticle",
+        "kind": 2,
+        "importPath": "company.views",
+        "description": "company.views",
+        "peekOfCode": "def addArticle(request):\n    form = ArticleForm(request.POST or None,request.FILES or None)\n    if form.is_valid():\n        article = form.save(commit=False)\n        article.slug = slugify(article.title)\n        article.author = request.user\n        article.save()\n        messages.success(request,\"Post created successfully\")\n        return redirect(\"dashboard\")\n    return render(request,\"company/addarticle.html\",{\"form\":form})",
+        "detail": "company.views",
+        "documentation": {}
+    },
+    {
+        "label": "detail",
+        "kind": 2,
+        "importPath": "company.views",
+        "description": "company.views",
+        "peekOfCode": "def detail(request,slug):\n    #article = Article.objects.filter(id = id).first()   \n    article = get_object_or_404(Article, slug=slug)\n    comments = article.comments.all()\n    return render(request,\"company/detail.html\",{\"article\":article,\"comments\":comments })\n# @login_required(login_url = \"user:login\")\ndef updateArticle(request, slug):\n    article = get_object_or_404(Article, slug=slug)\n    form = ArticleForm(request.POST or None,request.FILES or None,instance = article)\n    if form.is_valid():",
+        "detail": "company.views",
+        "documentation": {}
+    },
+    {
+        "label": "updateArticle",
+        "kind": 2,
+        "importPath": "company.views",
+        "description": "company.views",
+        "peekOfCode": "def updateArticle(request, slug):\n    article = get_object_or_404(Article, slug=slug)\n    form = ArticleForm(request.POST or None,request.FILES or None,instance = article)\n    if form.is_valid():\n        article = form.save(commit=False)\n        article.author = request.user\n        article.save()\n        messages.success(request,\"Makale başarıyla güncellendi\")\n        return redirect(\"dashboard\")\n    return render(request,\"company/update.html\",{\"form\":form})",
+        "detail": "company.views",
+        "documentation": {}
+    },
+    {
+        "label": "deleteArticle",
+        "kind": 2,
+        "importPath": "company.views",
+        "description": "company.views",
+        "peekOfCode": "def deleteArticle(request,slug):\n    article = get_object_or_404(Article,slug=slug)\n    article.delete()\n    messages.success(request,\"Makale Başarıyla Silindi\")\n    return redirect(\"article:dashboard\")\ndef addComment(request,slug):\n    article = get_object_or_404(Article, slug=slug)\n    if request.method == \"POST\":\n        comment_author = request.POST.get(\"comment_author\")\n        comment_content = request.POST.get(\"comment_content\")",
+        "detail": "company.views",
+        "documentation": {}
+    },
+    {
+        "label": "addComment",
+        "kind": 2,
+        "importPath": "company.views",
+        "description": "company.views",
+        "peekOfCode": "def addComment(request,slug):\n    article = get_object_or_404(Article, slug=slug)\n    if request.method == \"POST\":\n        comment_author = request.POST.get(\"comment_author\")\n        comment_content = request.POST.get(\"comment_content\")\n        newComment = Comment(comment_author  = comment_author, comment_content = comment_content)\n        newComment.article = article\n        newComment.save()\n    return redirect(reverse(\"detail\",kwargs={\"slug\":slug}))",
+        "detail": "company.views",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "manage",
+        "description": "manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'agriculture.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "manage",
+        "documentation": {}
+    }
+]

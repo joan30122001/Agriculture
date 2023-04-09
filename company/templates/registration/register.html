@@ -1,0 +1,173 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card" style="margin-top: 20px; margin-bottom: 20px">
+          <div class="card-body">
+            <h2 style="color: #1b5e20; margin-bottom: 20px">Login</h2>
+            <form action="{% url 'user_register' %}" method="post">
+              {% csrf_token %}
+              {% if error_message %}
+                <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+              {% endif %}
+              <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">Username<span class="text-red">*</span>:</label>
+                {{ form.username }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Email<span class="text-red">*</span>:</label>
+                {{ form.email }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.password.id_for_label }}" >Password<span class="text-red">*</span>:</label>
+                {{ form.password }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.password_repeat.id_for_label }}" >Confirm password:</label>
+                {{ form.password_repeat }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.first_name.id_for_label }}" >First Name:</label>
+                {{ form.first_name }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
+                {{ form.last_name }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.phone_number.id_for_label }}">Phone Number:</label>
+                {{ form.phone_number }}
+              </div>
+              <input type="submit" value="Register" class="btn btn-success">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% comment %} {% block content %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card" style="margin-top: 20px; margin-bottom: 20px">
+          
+          <div class="card-body">
+            <h2 style="color: #1b5e20; margin-bottom: 20px">Register</h2>
+            <form method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" name="username" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="phone_number">Phone Number:</label>
+                <input type="text" name="phone_number" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="password1">Password:</label>
+                <input type="password" name="password1" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="password2">Confirm Password:</label>
+                <input type="password" name="password2" class="form-control" required>
+              </div>
+              {% if error %}
+                <div class="alert alert-danger" role="alert">
+                  {{ error }}
+                </div>
+              {% endif %}
+              <button type="submit" class="btn btn-success" style="background-color: #66bb6a; border-color: #66bb6a;">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %} {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} {% block content %}
+    <div class="container">
+        <form action="{% url 'user_register' %}" method="post">
+            {% csrf_token %}
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Register</div>
+                    <div class="panel-body">
+                        {% if error_message %}
+                            <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                        {% endif %}
+                       
+                        <div class="form-group clearfix">
+                            <label for="{{ form.username.id_for_label }}" class="col-md-4 control-label text-right">Username<span class="text-red">*</span>:</label>
+                            <div class="col-md-6">
+                                {{ form.username }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.email.id_for_label }}" class="col-md-4 control-label text-right">Email<span class="text-red">*</span>:</label>
+                            <div class="col-md-6">
+                                {{ form.email }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.password.id_for_label }}" class="col-md-4 control-label text-right">Password<span class="text-red">*</span>:</label>
+                            <div class="col-md-6">
+                                {{ form.password }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.password_repeat.id_for_label }}" class="col-md-4 control-label text-right">Confirm password:</label>
+                            <div class="col-md-6">
+                                {{ form.password_repeat }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.first_name.id_for_label }}" class="col-md-4 control-label text-right">First Name:</label>
+                            <div class="col-md-6">
+                                {{ form.first_name }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.last_name.id_for_label }}" class="col-md-4 control-label text-right">Last Name:</label>
+                            <div class="col-md-6">
+                                {{ form.last_name }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.phone_number.id_for_label }}" class="col-md-4 control-label text-right">Phone Number:</label>
+                            <div class="col-md-6">
+                                {{ form.phone_number }}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-md-offset-4">
+                            <input type="submit" value="Register" class="btn btn-success">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %} {% endcomment %}
