@@ -1,14 +1,18 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, HttpResponse, redirect, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
-from .forms import RegisterForm
+from .forms import RegisterForm, UserForm, ProfileForm
 from django.contrib.auth import authenticate, login, logout
 from .forms import ArticleForm
-from .models import Article,Comment
+from .models import Article, Comment, Category, Profile, Post
 from django.contrib import messages
 from django.template.defaultfilters import slugify
 from django.db.models import Count
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required 
+from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView, CreateView
 
 
 
@@ -147,15 +151,70 @@ def user_logout(request):
 
 
 
+# @login_required
+# def profile(request):
+#     return render(request, 'profile.html')
+
+
+
+
+
+
+class ProfileView(LoginRequiredMixin, TemplateView):
+    template_name = 'registration/profile.html'
+
+
+
+class ProfileUpdateView(LoginRequiredMixin, TemplateView):
+    user_form = UserForm
+    profile_form = ProfileForm
+    template_name = 'registration/profile-update.html'
+
+    def post(self, request):
+        Profile.objects.get_or_create(user=request.user)
+        post_data = request.POST or None
+        file_data = request.FILES or None
+
+        user_form = UserForm(post_data, instance=request.user)
+        profile_form = ProfileForm(post_data, file_data, instance=request.user.profile)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.error(request, 'Your profile is updated successfully!')
+            return HttpResponseRedirect(reverse_lazy('profile'))
+
+        context = self.get_context_data(
+                                        user_form=user_form,
+                                        profile_form=profile_form
+                                    )
+
+        return self.render_to_response(context)     
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
+
+
+def all_profile(request):
+    profiles = Profile.objects.exclude(activity='', speciality='')
+
+    return render(request, 'registration/all_profile.html', {'profiles': profiles})
+
+
+
+
 def articles(request):
     keyword = request.GET.get("keyword")
+
+    categories = Category.objects.all()
 
     if keyword:
         articles = Article.objects.filter(title__contains = keyword)
         return render(request,"company/articles.html",{"articles":articles})
     articles = Article.objects.all()
 
-    return render(request,"company/articles.html",{"articles":articles})
+    return render(request,"company/articles.html",{"articles":articles, "categories":categories})
 
 
     
@@ -176,6 +235,7 @@ def addArticle(request):
         article = form.save(commit=False)
         article.slug = slugify(article.title)
         article.author = request.user
+        article.profile = request.user.profile
         article.save()
 
         messages.success(request,"Post created successfully")
@@ -227,13 +287,28 @@ def addComment(request,slug):
     article = get_object_or_404(Article, slug=slug)
 
     if request.method == "POST":
-        comment_author = request.POST.get("comment_author")
+        # comment_author = request.POST.get("comment_author")
         comment_content = request.POST.get("comment_content")
 
-        newComment = Comment(comment_author  = comment_author, comment_content = comment_content)
+        # newComment = Comment(comment_author  = comment_author, comment_content = comment_content)
+        newComment = Comment(comment_content = comment_content)
 
         newComment.article = article
+        newComment.comment_author = request.user
 
         newComment.save()
     return redirect(reverse("detail",kwargs={"slug":slug}))
-    
+
+
+
+def profile_posts(request, profile_id):
+    profile = get_object_or_404(Profile, pk=profile_id)
+    articles = Article.objects.filter(profile=profile)
+    return render(request, 'registration/profile_posts.html', {'profile': profile, 'articles': articles})
+
+
+
+# def profile_posts(request, profile_id):
+#     profile = get_object_or_404(Profile, pk=profile_id)
+#     articles = profile.articles.all()
+#     return render(request, 'registration/profile_posts.html', {'profile': profile, 'articles': articles})

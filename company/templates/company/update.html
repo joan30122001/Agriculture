@@ -5,19 +5,41 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="row">
-    <div class="col-md-6 offset-md-3">
-        <h3>Mise à jour du post</h3>
-        <hr>
-        <form method = "post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{form.media}}
-            {{form|crispy}}
-            <br>
-            <button type = "submit" class = "btn btn-danger">Mise à jour du post</button>
-        </form>
+<!--Inner Header Start-->
+<section class="wf100 p100 inner-header" style="margin-bottom: 50px">
+    <div class="container">
+       <h1>Modifier un Post</h1>
+       <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Modifier un Post</a></li>
+       </ul>
+    </div>
+</section>
+  <!--Inner Header End-->
+<div class="container">
+  {% comment %} <h3>Kontrol Paneli</h3> {% endcomment %}
+    <div class="section-title-2" style="margin-bottom: 50px">
+        <h5>Mise à jour</h5>
+        <h2>Modifier un post</h2>
+    </div>
+</div>
+
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-md-9 offset-md-1.5">
+            {% comment %} <h3>Mise à jour du post</h3>
+            <hr> {% endcomment %}
+            <form method = "post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.media}}
+                {{form|crispy}}
+                <br>
+                <button type = "submit" class = "btn btn-danger">Mise à jour du post</button>
+            </form>
+        </div>
     </div>
   </div>
+</div>
 
 
 {% endblock content %}

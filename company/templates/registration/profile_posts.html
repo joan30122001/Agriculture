@@ -44,7 +44,7 @@
 {% comment %} <h3>Kontrol Paneli</h3> {% endcomment %}
 <div class="section-title-2" style="margin-bottom: 50px">
   <h5>Les Posts</h5>
-  <h2>Tous les Posts disponible</h2>
+  <h2>Tous les Posts du profil</h2>
 </div>
 </div>
 
@@ -59,44 +59,8 @@
 </div> {% endcomment %}
 {% comment %} <div class ="row"> {% endcomment %}
     <div class="container">
-        <div class="col-md-12">
-            <form class="mb-3">
-              <div class="form-row">
-                 {% csrf_token %} 
-                 <div class="col-auto form-group col-md-8">
-                  <input type="text" name = "keyword" class="form-control" maxlength="64" placeholder="Titre...">
-                 </div>
-                 <div class="col-auto">
-                <button type="submit" class="btn btn-info">Recherche</button>
-                 </div>
-              </div>
-            </form>
-          </div>
-        </div>
+        
 
-
-        <div class="container">
-          <div class="row">
-             {% comment %} <div class="col-lg-6">
-                <div class="section-title-2">
-                   <h5>We are working these</h5>
-                   <h2>Current Projects</h2>
-                </div>
-             </div> {% endcomment %}
-            <div class="col mb-4">
-              
-                <ul class="nav d-flex justify-content-center" id="myTab" role="tablist">
-                  {% for category in categories %}
-                   <li class="nav-item"> <a class="nav-link  btn btn-secondary" style="margin: 20px" id="wildlife-tab" data-toggle="tab" href="#wildlife" role="tab" aria-controls="wildlife-tab" aria-selected="true">{{category.category}}</a> </li>
-                   {% comment %} <li class="nav-item"> <a class="nav-link btn btn-secondary" style="margin: 20px" id="water-tab" data-toggle="tab" href="#water" role="tab" aria-controls="water-tab" aria-selected="false">Water Resources</a> </li>
-                   <li class="nav-item"> <a class="nav-link btn btn-secondary" style="margin: 20px" id="solar-tab" data-toggle="tab" href="#solar" role="tab" aria-controls="solar-tab" aria-selected="false">Solar Energy</a> </li>
-                   <li class="nav-item"> <a class="nav-link btn btn-secondary" style="margin: 20px" id="recycling-tab" data-toggle="tab" href="#recycling" role="tab" aria-controls="recycling-tab" aria-selected="false">Recycling</a> </li> {% endcomment %}
-                   {% endfor %}
-                  </ul>
-              
-            </div>
-          </div>
-        </div>
 
 {% if articles %}
 

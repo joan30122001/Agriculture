@@ -3,50 +3,69 @@
 {% load i18n %}
 
 {% block content %}
+<!--Inner Header Start-->
+<section class="wf100 p100 inner-header" style="margin-bottom: 50px">
+  <div class="container">
+     <h1>Detail</h1>
+     <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Detail</a></li>
+     </ul>
+  </div>
+</section>
+<!--Inner Header End-->
+<div class="container">
+{% comment %} <h3>Kontrol Paneli</h3> {% endcomment %}
+<div class="section-title-2" style="margin-bottom: 50px">
+  <h5>Détail</h5>
+  <h2>Détail d'un Post</h2>
+</div>
+</div>
+
+<div class="container">
 <div class="row">
 
     <!-- Post Content Column -->
-    <div class="col-lg-8">
+    <div class="col-md-12">
 
-      <!-- Title -->
-      <h3 class="mt-4">{{article.title}}</h3>
+       <!-- Preview Image -->
+      <div class="">
+        {% if article.article_image %}
+          <img class="img-fluid rounded col-md-12" src="{{article.article_image.url}}" alt="">
+        {% endif %}
+      </div>
+      <div class="ml-4 mt-4">
+        <!-- Author -->
+        <span class="" style="border: 1px solid #66bb6a; background-color: #66bb6a; font-weight: bold; color: #fff; padding-top: 5px; padding-bottom: 5px; padding-left: 25px; padding-right: 25px">
+          {{article.author.username}}
+        </span>
+      </div>
+      <div class="ml-4 mt-4">
+        <!-- Title -->
+        <h3 style="color: #1b5e20;" class="mt-4">{{article.title}}</h3>
+      </div>
+      <div class="ml-4 ">
+        <!-- Date/Time -->
+        <p>{{article.created_date}}</p>
+      </div>
+      <div class="ml-4 mt-4">
+        <!-- Post Content -->
+        <p class="lead">
+            {{article.content|safe}}
+        </p>
+      </div>
+      <br><br><br><br>
 
-      <!-- Author -->
-      <p class="lead">
-        
-        Publié par: {{article.author.username}}
-      </p>
-
-      <hr>
-
-      <!-- Date/Time -->
-      <p>{{article.created_date}}</p>
-
-      <hr>
-
-      <!-- Preview Image -->
-      {% if article.article_image %}
-      <img class="img-fluid rounded" src="{{article.article_image.url}}" alt="">
-      {% endif %}
-     
-
-      <hr>
-
-      <!-- Post Content -->
-      <p class="lead">
-          {{article.content|safe}}
-      </p>
-
-      <hr>
-
-      <h4>Commentaires {% if comments %}({{comments.count }}){% endif %}</h4>
-      <hr>
+      <div class="ml-4">
+      <h4 style="color: #66bb6a;">Commentaires {% if comments %}({{comments.count }}){% endif %}</h4>
+      <br>
       {% if comments %}
       {% for comment in comments  %}
         <div class="media mb-4">
           <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
           <div class="media-body">
-            <h5 class="mt-0">{{ comment.comment_author}}</h5>
+            {% comment %} <h5 class="mt-0">{{ comment.comment_author}}</h5> {% endcomment %}
+            <h5 class="mt-0">{{ comment.comment_author.username}}</h5>
             {{comment.comment_date}} <br>
             {{comment.comment_content}}
           </div>
@@ -60,15 +79,15 @@
       </div>
       {% endif %}
 
-      <div class="card my-4 container">
+        <div class="card my-4 container">
           <h5 class="card-header">Ajouter un commentaire:</h5>
           <div class="card-body">
             <form method = "post" action = "{% url 'comment' article.slug %}">
               {% csrf_token %}
-              <div class="form-group">
+              {% comment %} <div class="form-group">
                   <label for="formGroupExampleInput">Nom</label>
                   <input name = "comment_author" type="text" class="form-control" id="formGroupExampleInput" placeholder="İsminizi girin">
-                </div>
+              </div> {% endcomment %}
               <div class="form-group">
                   <label for="formGroupExampleInput">Commentaire</label>
                 <textarea name = "comment_content" class="form-control" rows="3"></textarea>
@@ -77,10 +96,11 @@
             </form>
           </div>
         </div>
-        </div>
+      </div>
+    </div>
         
       </div>
-
+    </div>
       
 
 {% endblock content %}
