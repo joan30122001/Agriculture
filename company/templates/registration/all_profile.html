@@ -10,7 +10,7 @@
 {% block content %}
 <style>
     .card{
-        width: 400px;
+        /*width: 400px;*/
         border: none;
         border-radius: 20px;
         margin-top: 25%;
@@ -75,28 +75,42 @@
 
 
 {% comment %} {% for profile in profiles %} {% endcomment %}
-    <div class="container d-flex justify-content-center mb-4">
+    <div class="container mb-4">
+      <div class="row">
         {% for profile in profiles %}
-        <div class="card p-3 Larger shadow" style="margin: 10px">
-            <div class="media">
-                <img src="{{profile.user.profile.profile_image.url}}" style="border: 1px solid white; border-radius: 50%; width: 70px; height: 70px" class="mr-3">
-                <div class="media-body">
-                    {% comment %} {% for profile in profiles %} {% endcomment %}
-                        <h5 class="mt-2 mb-0" style="color: #">{{ profile.user.username }}</h5>
-                        <div class="d-flex flex-row justify-content-between align-text-center">
-                            <small style="color: #66bb6a;" >{{ profile.activity }}</small>
-                            <small style="color: #66bb6a;" >{{ profile.speciality }}</small>
-                            
-                            <a href="{% url 'profile_posts' profile.id %}" class="btn btn-primary ">Follow</a>
-                        </div>
-                        <div style="line-weight: 1px">
-                            <small class="" style="color: #111">{{ profile.bio|safe|truncatewords:10 }}</small>
-                        </div>
-                        {% comment %} {% endfor %} {% endcomment %}
-                </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="card p-3 Larger shadow" style="margin: 10px">
+            <div class="media ">
+              <img src="{{profile.user.profile.profile_image.url}}" style="border: 1px solid white; border-radius: 50%; width: 70px; height: 70px" class="mr-3">
+              <div class=""> 
+                <h5 class="mt-2 mb-0" style="color: #">{{ profile.user.username }}</h5>
+                <small style="color: #66bb6a;" >{{ profile.activity }} : </small>
+                <small style="color: #66bb6a;" >{{ profile.speciality }}</small>
+                <p style="color: #66bb6a; font-size: 12px" >{{ profile.phone_number }}</p>
+              </div>
             </div>
+              <div class="media-body">
+                {% comment %} {% for profile in profiles %} {% endcomment %}
+                    {% comment %} <h5 class="mt-2 mb-0" style="color: #">{{ profile.user.username }}</h5> {% endcomment %}
+                    {% comment %} <div class="d-flex flex-row justify-content-between align-text-center"> {% endcomment %}
+                    {% comment %} <div class=""> 
+                      <small style="color: #66bb6a;" >{{ profile.activity }} : </small>
+                      <small style="color: #66bb6a;" >{{ profile.speciality }}</small>
+                      <p style="color: #66bb6a; font-size: 12px" >{{ profile.phone_number }}</p>
+                    </div> {% endcomment %}
+                    <div style="">
+                        <small class="" style="color: #111">{{ profile.bio|safe|truncatewords:25 }}</small>
+                    </div>
+                    <div>
+                      <a href="{% url 'profile_posts' profile.id %}" style="margin-top: 30px" class="btn btn-primary ">Follow</a>
+                    </div>
+                  {% comment %} {% endfor %} {% endcomment %}
+            </div>
+            {% comment %} </div> {% endcomment %}
+          </div>
         </div>
         {% endfor %}
+      </div>
     </div>
 {% comment %} {% endfor %} {% endcomment %}
 

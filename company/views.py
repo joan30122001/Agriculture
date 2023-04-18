@@ -197,6 +197,14 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
 
 
 def all_profile(request):
+    keyword = request.GET.get("keyword")    
+
+    # profiles = Profile.objects.exclude(activity='', speciality='')
+
+    # keyword = request.GET.get("keyword")
+    if keyword:
+        profiles = Profile.objects.filter(activity__contains = keyword)
+        return render(request,"registration/all_profile.html",{"profiles":profiles})
     profiles = Profile.objects.exclude(activity='', speciality='')
 
     return render(request, 'registration/all_profile.html', {'profiles': profiles})
