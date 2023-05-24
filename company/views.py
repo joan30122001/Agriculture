@@ -1,10 +1,10 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, HttpResponse, redirect, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
-from .forms import RegisterForm, UserForm, ProfileForm
+from .forms import RegisterForm, UserForm, ProfileForm, StoryForm
 from django.contrib.auth import authenticate, login, logout
 from .forms import ArticleForm
-from .models import Article, Comment, Category, Profile, Post
+from .models import Article, Comment, Category, Profile, Post, Story
 from django.contrib import messages
 from django.template.defaultfilters import slugify
 from django.db.models import Count
@@ -13,6 +13,9 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView
+from django.utils import timezone
+from django.views.generic import View
+from django.conf import settings
 
 
 
@@ -26,6 +29,34 @@ def home(request):
 
 def about(request):
     return render(request, 'company/about.html')
+
+
+
+def create_story(request):
+    # if request.method == 'POST':
+    form = StoryForm(request.POST, request.FILES)
+    if form.is_valid():
+        story = form.save(commit=False)
+        story.user = request.user
+        story.save()
+        return redirect('create_story')
+    # else:
+    #     form = StoryForm()
+    return render(request, 'registration/create_story.html', {"form":form})
+
+
+
+def story(request):
+    story = Story.objects.all()
+    return render(request, 'registration/story.html', {"story":story})
+
+
+
+class DeleteExpiredRecordsView(View):
+    def get(self, request, *args, **kwargs):
+        expired_records = Story.objects.filter(expire_at__lt=timezone.now())
+        expired_records.delete()
+        return HttpResponse('Expired records deleted')
 
 
 
@@ -135,7 +166,7 @@ def user_login(request):
             login(request, user)
             # Success, now let's login the user.
             # return render(request, 'company/home.html')
-            return redirect('home')
+            return redirect('dashboard')
         else:
             # Incorrect credentials, let's throw an error to the screen.
             return render(request, 'registration/login.html', {'error_message': 'Incorrect username and / or password.'})
@@ -320,3 +351,26 @@ def profile_posts(request, profile_id):
 #     profile = get_object_or_404(Profile, pk=profile_id)
 #     articles = profile.articles.all()
 #     return render(request, 'registration/profile_posts.html', {'profile': profile, 'articles': articles})
+
+
+
+# def initiate_payment(request: HttpRequest) -> HttpResponse:
+#     if request.method == 'POST':
+#         payment_form = forms.PaymentForm(request.POST)
+#         if payment_form.is_valid():
+#             payment = payment_form.save()
+#             return render(request, 'registration/make_payment.html', {'payment': payment, 'paystack_public_key': settings.PAYSTACK_PUBLIC_KEY})
+#     else:
+#         payment_form = forms.PaymentForm()
+#     return render(request, 'registration/initiated_payment.html', {'payment_form': payment_form})
+
+
+
+# def verify_payment(request: HttpRequest, ref: str) -> HttpResponse:
+#     payment = get_object_or_404(Payment, ref=ref)
+#     verified = payment.verify_payment()
+#     if verified:
+#         messages.success(request, "Verification Successfull")
+#     else:
+#         messages.error(request, "Verification Failed.")
+#     return redirect('initiate-payment')

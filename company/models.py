@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from PIL import Image
+from django.utils import timezone
+import secrets
+# from .paystack import PayStack
 
 
 
@@ -117,3 +120,54 @@ class Post(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     article_image = models.FileField(upload_to='files/', blank = True,null = True)
     slug = models.SlugField(unique=True, max_length=100)
+
+
+
+class Story(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='images/')
+    caption = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+    expire_at = models.DateTimeField(null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.expire_at:
+            self.expire_at = timezone.now() + timezone.timedelta(minutes=10)
+        super().save(*args, **kwargs)
+
+
+
+# class Payment(models.Model):
+#     amount = models.PositiveIntegerField()
+#     ref = models.CharField(max_length=255)
+#     email = models.EmailField()
+#     verified = models.BooleanField(default=False)
+#     date_created = models.DateTimeField(auto_now_add=True) 
+
+#     class META: 
+#         ordering = ("-date_created",)
+
+#     def __str__(self) -> str:
+#         return f"Payment: {self.amount}"
+
+#     def save(self, *args, **kwargs) -> None:
+#         while not self.ref:
+#             ref = secrets.token_urlsafe(50)
+#             object_with_similar_ref = Payment.objects.filter(ref=ref) 
+#             if not object_with_similar_ref:
+#                 self.ref = ref
+#         super().save(*args, **kwargs)
+    
+#     def amount_value(self) -> int:
+#         return self.amount *100
+
+#     def verify_payment(self):
+#         paystack = PayStack()
+#         status, result = paystack.verify_payment(self.ref, self.amount)
+#         if status:
+#             if result['amount'] / 100 == self.amount:
+#                 self.verified = True
+#             self.save
+#         if self.verified:
+#             return True
+#         return False

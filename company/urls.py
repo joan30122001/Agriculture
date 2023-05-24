@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, about, ProfileUpdateView, ProfileView, all_profile
+from .views import home, about, ProfileUpdateView, ProfileView, all_profile, create_story, story
 from . import views
 
 urlpatterns = [
@@ -13,6 +13,8 @@ urlpatterns = [
     path('profile/', ProfileView.as_view(), name='profile'),
     path('all_profile/', views.all_profile, name='all_profile'),
     path('<int:profile_id>/articles/', views.profile_posts, name='profile_posts'),
+    path('create_story/', create_story, name='create_story'),
+    path('story/', story, name='story'),
 
     path('dashboard/',views.dashboard,name = "dashboard"),
     path('addarticle/',views.addArticle,name = "addarticle"),
@@ -21,4 +23,7 @@ urlpatterns = [
     path('delete/<slug:slug>',views.deleteArticle,name = "delete"),
     path('Services',views.articles,name = "articles"),
     path('comment/<slug:slug>',views.addComment,name = "comment"),
+
+    # path('payment', views.initiate_payment, name="initiate-payment"),
+    # path('<str:ref>/', views.verify_payment, name="verify-payment"),
 ]

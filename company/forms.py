@@ -1,5 +1,5 @@
 from django import forms
-from .models import Article, Category, Profile
+from .models import Article, Category, Profile, Story
 from ckeditor.widgets import CKEditorWidget
 from tinymce.widgets import TinyMCE
 from django.contrib.auth.models import User
@@ -89,3 +89,20 @@ class ProfileForm(forms.ModelForm):
             'speciality',
             'profile_image'
         ]
+
+
+
+class StoryForm(forms.ModelForm):
+    class Meta:
+        model = Story
+        fields = ['image', 'caption']
+
+
+
+# class PaymentForm(forms.ModelForm):
+#     class Meta: 
+#         model = Payment
+#         fields = [
+#             'amount', 
+#             'email',
+#         ]

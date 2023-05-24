@@ -1,0 +1,17 @@
+{% extends '_partials/base.html' %}
+{% load static %} 
+
+{% load crispy_forms_tags %}  
+
+{% block content %}  
+    <h1>Create New Image Story</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% comment %} {{ form.as_p }} {% endcomment %}
+        <div class="form-group">
+            {{form.media}}
+            {{form|crispy}}
+        </div>
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}
