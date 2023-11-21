@@ -1,223 +1,179 @@
-{% extends '_partials/base.html' %}
+{% extends '_partials/base1.html' %}
 {% load static %}
 {% load i18n %}
 
 {% block stylepage %}
-  {% comment %} <style>
-    .card {
-      margin: 10px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      height: 460px;
-      margin-top: 25px;
+  <style>
+    .contents {
+      font-size: 12px;
     }
-    .img-fluid{
-      height: 300px;
-    }
-    .badge{
-      border-radius: 50px;
-      margin-bottom: 10px;
-    }
-    .articletag{
-      text-align: center;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      font-size: 26px;
-    }
-  </style> {% endcomment %}
-
+   
+  </style>
 {% endblock stylepage %}
 
 {% block content %}
-<section class="wf100 p100 inner-header" style="margin-bottom: 50px">
-  <div class="container">
-     <h1>Posts</h1>
-     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Posts</a></li>
-     </ul>
-  </div>
-</section>
-<!--Inner Header End-->
-{% comment %} <div class="container">
-  <div class="section-title-2" style="margin-bottom: 50px">
-    <h5>Les Posts</h5>
-    <h2>Tous les Posts disponible</h2>
-  </div>
-</div> {% endcomment %}
-
-{% comment %} <div class ="row">
-    
-        <div class="col-md-10 offset-md-3">
-            <div class="col-lg-8">
-                <h3>Posts</h3>
-                <hr>
-                </div>
+  <nav class="navbar navbar-main navbar-expand-lg shadow-none px-0 mx-4 " id="navbarBlur" navbar-scroll="true">
+    <div class="container-fluid py-1 px-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+          <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+          <li class="breadcrumb-item text-sm text-dark active" aria-current="page">All Post(s)</li>
+        </ol>
+        <h6 class="font-weight-bolder mb-0">All Post(s)</h6>
+      </nav>
+      <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          
         </div>
-</div> {% endcomment %}
-{% comment %} <div class ="row"> {% endcomment %}
-    <div class="container">
-        <div class="col-md-12">
-            <form class="mb-3">
-              <div class="form-row">
-                 {% csrf_token %} 
-                 <div class="col-auto form-group col-md-8">
-                  <input type="text" name = "keyword" class="form-control" maxlength="64" placeholder="Titre...">
-                 </div>
-                 <div class="col-auto">
-                <button type="submit" class="btn btn-info">Recherche</button>
-                 </div>
+        <ul class="navbar-nav  justify-content-end">
+          <li class="nav-item d-flex align-items-center">
+            <a class="btn btn-outline-success btn-sm mb-0 me-3" href="">{{request.user.username}}</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            {% comment %} <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+              <i class="fa fa-user me-sm-1"></i>
+              <span class="d-sm-inline d-none">Sign In</span>
+            </a> {% endcomment %}
+            <img src="{{user.profile.profile_image.url}}" style="border: 1px solid white; border-radius: 10px; width: 35px; height: 35px" class="mr-3">
+        </li>
+          {% comment %} <li class="nav-item d-flex align-items-center">
+            <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+              <i class="fa fa-user me-sm-1"></i>
+              <span class="d-sm-inline d-none">Sign In</span>
+            </a>
+          </li> {% endcomment %}
+          <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+            <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+              <div class="sidenav-toggler-inner">
+                <i class="sidenav-toggler-line"></i>
+                <i class="sidenav-toggler-line"></i>
+                <i class="sidenav-toggler-line"></i>
               </div>
-            </form>
-          </div>
-        </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <hr class="horizontal dark mt-0">
 
 
-        <div class="container">
-          <div class="row">
-             {% comment %} <div class="col-lg-6">
-                <div class="section-title-2">
-                   <h5>We are working these</h5>
-                   <h2>Current Projects</h2>
-                </div>
-             </div> {% endcomment %}
-            <div class="col mb-4">
-              
-                <ul class="nav d-flex justify-content-center" id="myTab" role="tablist">
-                  {% for category in categories %}
-                   <li class="nav-item"> <a class="nav-link  btn btn-secondary" style="margin: 20px" id="wildlife-tab" data-toggle="tab" href="#wildlife" role="tab" aria-controls="wildlife-tab" aria-selected="true">{{category.category}}</a> </li>
-                   {% comment %} <li class="nav-item"> <a class="nav-link btn btn-secondary" style="margin: 20px" id="water-tab" data-toggle="tab" href="#water" role="tab" aria-controls="water-tab" aria-selected="false">Water Resources</a> </li>
-                   <li class="nav-item"> <a class="nav-link btn btn-secondary" style="margin: 20px" id="solar-tab" data-toggle="tab" href="#solar" role="tab" aria-controls="solar-tab" aria-selected="false">Solar Energy</a> </li>
-                   <li class="nav-item"> <a class="nav-link btn btn-secondary" style="margin: 20px" id="recycling-tab" data-toggle="tab" href="#recycling" role="tab" aria-controls="recycling-tab" aria-selected="false">Recycling</a> </li> {% endcomment %}
-                   {% endfor %}
-                  </ul>
-              
-            </div>
-          </div>
-        </div>
 
-{% if articles %}
 
- {% comment %} {% for article in articles %}  {% endcomment %}
-{% comment %} <div class="row"> {% endcomment %}
-  <div class="container-fluid">  
+  {% comment %} <div class ="row"> {% endcomment %}
   <div class="container">
-
-      <div class="row">
-         {% for article in articles %} 
-        {% comment %} <div class="col-auto col-md-4"> 
-        <div class="column"> 
-          <div class="card">
-            <img src="{{article.article_image.url}}" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-                <span class="badge bg-primary">TECHNOLOGY</span>
-              <h5 class="card-title">Why is the Tesla Cybertruck designed the way it is?</h5>
-              <p class="card-text">{{article.content|safe|truncatewords:10}}</p>
-              <a href="{% url 'detail' article.slug %}" class ="btn btn-danger my-3">Lire Plus</a>
-            </div>
-          </div> {% endcomment %}
-          <div class="col-lg-4 col-sm-6 mb-4 hover-animate">
-            <div class="card shadow border-0 h-100">
-              <a href="{% url 'detail' article.slug %}">
-                <img class="img-fluid card-img-top" style="height: 170px" src="{{article.article_image.url}}" alt="..."/></a>
-              <div class="card-body"><a class="text-uppercase text-muted text-sm letter-spacing-2" href="#">
-                {{article.author.username}} </a>
-                <h6 class="my-2"><a class="" href="" style="font-size: 15px">
-                 {{article.title}}</a></h6>
-                 <h6 class="my-2"><a class="text-dark" href="" style="font-size: 15px">
-                  {{article.category}}</a></h6>
-                <p class="text-gray-500 text-sm my-3"><i class="far fa-clock mr-2"></i>
-                  {{article.created_date}}</p>
-                <p class="my-2 text-muted text-sm">
-                  {{article.content|safe|truncatewords:10}}
-                </p>
-              
-                <a class="btn btn-link pl-0"href="{% url 'detail' article.slug %}">Read more<i class="fa fa-long-arrow-alt-right ml-2"></i></a> 
+    <div class="col-md-12">
+        <form class="mb-3">
+          <div class="form-row">
+            {% csrf_token %} 
+            <div class="col-auto form-group">
+              <div class="d-flex align-items-center">
+                <input type="text" name = "keyword" class="form-control" style="margin-right: 10px; height: 60px" maxlength="64" placeholder="Titre...">
+                <button type="submit" class="btn btn-success mt-3" style="height: 60px">Recherche</button>
               </div>
             </div>
           </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mb-4">
+        <ul class="nav d-flex justify-content-center" id="myTab" role="tablist">
+          {% for category in categories %}
+            <li class="nav-item" style="font-size: 12px"> <a class="nav-link  btn btn-secondary" style="margin: 5px" id="wildlife-tab" data-toggle="tab" href="#wildlife" role="tab" aria-controls="wildlife-tab" aria-selected="true">{{category.category}}</a> </li>
           {% endfor %}
-        </div>
+        </ul>
       </div>
     </div>
   </div>
-        {% comment %} <div class="col">
-          <div class="card">
-            <img src="./img/img2.jpg" class="card-img-top  img-fluid" alt="...">
-            <div class="card-body">
-                <span class="badge bg-success">POPULAR</span>
-              <h5 class="card-title">How to Keep Going When You Don’t Know What’s Next.</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, ullam!</p>
+
+  {% comment %} {% if articles %} {% endcomment %}
+
+
+  {% comment %} <div class="container-fluid">  
+    <div class="row">
+      {% for article in articles %} 
+        <div class="col-lg-4 col-sm-6 mb-4 hover-animate">
+          <div class="card shadow border-0 h-100">
+            <a href="{% url 'detail' article.slug %}">
+              <img class="img-fluid card-img-top" style="height: 170px" src="{{article.article_image.url}}" alt="..."/>
+            </a>
+            <div class="card-body"><a class="text-uppercase text-muted text-sm letter-spacing-2" href="#">
+              
+              <h6 class="my-">
+                {{article.title}}
+              </h6>
+              <h6 class="my-"><a class="text-dark" href="" style="font-size: 12px">
+                {{article.category}}</a>
+              </h6>
+              <p class="text-gray-500 text-sm my-3"><i class="far fa-clock mr-2"></i>
+                {{article.created_date}}</p>
+              <p class="contents">
+                {{article.content|safe|truncatewords:10}}
+              </p>
+              <a class="btn btn-link pl-0"href="{% url 'detail' article.slug %}">Read more<i class="fa fa-long-arrow-alt-right ml-2"></i></a> 
             </div>
           </div>
         </div>
-        <div class="col">
+      {% endfor %}
+    </div>
+  </div> {% endcomment %}
+
+  {% comment %} <div class="container-fluid col-md-12">
+    <div class="row">
+      {% for article in articles %} 
+        <div class="col-md-4">
           <div class="card">
-            <img src="./img/img3.jpg" class="card-img-top  img-fluid" alt="...">
+            <a href="{% url 'detail' article.slug %}">
+              <img class="card-img-top" style="height: 170px" src="{{article.article_image.url}}" alt="..."/>
+            </a>
+            
             <div class="card-body">
-                <span class="badge bg-danger">Design</span>
-              <h5 class="card-title">10 Rules of Dashboard Design.</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, ullam!</p>
+              <h5 class="card-title">{{article.title}}</h5>
+              <h5 class="card-title">{{article.category}}</h5>
+              <h5 class="card-title"><i class="far fa-clock mr-2"></i>{{article.created_date}}</h5>
+              <p class="card-text" style="overflow: hidden;">{{article.content|safe|truncatewords:10}}</p>
+              <a class="btn btn-link pl-0"href="{% url 'detail' article.slug %}">Read more<i class="fa fa-long-arrow-alt-right ml-2"></i></a> 
             </div>
           </div>
-        </div> {% endcomment %}
-       
-      {% comment %} </div>
-    </div> {% endcomment %}
-
-    <!-- Post Content Column -->
-    {% comment %} <div class="col-lg-8">
-
-      <!-- Title -->
-      <a href="{% url 'detail' article.slug %}"><h2 class="mt-4">{{article.title}}</h2></a> 
-        
-      <!-- Author -->
-      <p class="lead">
-        
-        {{article.author.username}} tarafından yayınlandı
-      </p>
-
-      <hr>
-
-      <!-- Date/Time -->
-      <p>{{article.created_date}}</p>
-      <hr>
-      <!-- Preview Image -->
-      {% if article.article_image %}
-      <a href="{% url 'detail' article.slug %}"><img class="img-fluid rounded" src="{{article.article_image.url}}" alt=""></a>
-      {% endif %}
-     
-
-      <hr>
-
-      <!-- Post Content -->
-      <p class="lead">
-          {{article.content|safe|truncatewords:50}}
-      </p>
-
-      <a href="{% url 'detail' article.slug %}" class ="btn btn-danger my-3">Devamını Oku</a>
-      <hr>
-         
         </div>
-      </div>
-      </div> {% endcomment %}
+      {% endfor %}
+    </div>
+  </div> {% endcomment %}
+  <div class="container mb-4">
+    <div class="row">
+      {% for article in articles %} 
+        <div class="col-md-12 mb-4">
+          <div class="shadow d-flex" style="">
+            <div class="col-md-4 p-2">
+              <a href="{% url 'detail' article.slug %}">
+                <img class="card-img-top" style="height: 200px; width: 100%" src="{{article.article_image.url}}" alt="..."/>
+              </a>
+            </div>
+            <div class="col-md-8 p-2">
+              <h5 class="card-title" style="color: #82d616">{{article.title}}</h5>
+              <small class="card-title">{{article.category}}</small>
+              <h6 class="card-title"><i class="far fa-clock mr-2"></i>{{article.created_date}}</h6>
+              <p class="card-text" style="overflow: hidden;">{{article.content|safe|truncatewords:10}}</p>
+              <a class="btn btn-link pl-0" style="color: #82d616" href="{% url 'detail' article.slug %}">Read more<i class="fa fa-long-arrow-alt-right ml-2"></i></a> 
+            </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% comment %} </div> {% endcomment %}
 
-{% comment %} {% endfor %} {% endcomment %}
 
-
-{% else %}
-<div class ="row">
-    
-    <div class="col-md-10 offset-md-3">
-        <div class="col-lg-8">
-<div class = "alert alert-danger">
-   Aucun posts disponibles
-</div>
-</div>
-</div>
-</div>
-{% endif %}
-</div>
+  {% comment %} <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var elementsToStyle = document.querySelectorAll(".contents");
+      elementsToStyle.forEach(function(element) {
+          element.style.fontSize = "12px";
+          // Add other CSS styles as needed
+      });
+    });
+  </script> {% endcomment %}
 
 {% endblock content %}

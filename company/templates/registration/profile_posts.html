@@ -1,4 +1,4 @@
-{% extends '_partials/base.html' %}
+{% extends '_partials/base1.html' %}
 {% load static %}
 {% load i18n %}
 
@@ -30,159 +30,89 @@
 {% endblock stylepage %}
 
 {% block content %}
-<section class="wf100 p100 inner-header" style="margin-bottom: 50px">
-  <div class="container">
-     <h1>Posts</h1>
-     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Posts</a></li>
-     </ul>
+<nav class="navbar navbar-main navbar-expand-lg shadow-none px-0 mx-4 " id="navbarBlur" navbar-scroll="true">
+  <div class="container-fluid py-1 px-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Profile Post(s)</li>
+      </ol>
+      <h6 class="font-weight-bolder mb-0">Profile Post(s)</h6>
+    </nav>
+    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+      <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+        
+      </div>
+      <ul class="navbar-nav  justify-content-end">
+        <li class="nav-item d-flex align-items-center">
+          <a class="btn btn-outline-success btn-sm mb-0 me-3" href="">{{request.user.username}}</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          {% comment %} <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+            <i class="fa fa-user me-sm-1"></i>
+            <span class="d-sm-inline d-none">Sign In</span>
+          </a> {% endcomment %}
+          <img src="{{user.profile.profile_image.url}}" style="border: 1px solid white; border-radius: 10px; width: 35px; height: 35px" class="mr-3">
+       </li>
+        {% comment %} <li class="nav-item d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+            <i class="fa fa-user me-sm-1"></i>
+            <span class="d-sm-inline d-none">Sign In</span>
+          </a>
+        </li> {% endcomment %}
+        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
-</section>
-<!--Inner Header End-->
-<div class="container">
-{% comment %} <h3>Kontrol Paneli</h3> {% endcomment %}
-<div class="section-title-2" style="margin-bottom: 50px">
-  <h5>Les Posts</h5>
-  <h2>Tous les Posts du profil</h2>
-</div>
-</div>
-
-{% comment %} <div class ="row">
-    
-        <div class="col-md-10 offset-md-3">
-            <div class="col-lg-8">
-                <h3>Posts</h3>
-                <hr>
-                </div>
-        </div>
-</div> {% endcomment %}
-{% comment %} <div class ="row"> {% endcomment %}
-    <div class="container">
+</nav>
+<hr class="horizontal dark mt-0">
         
 
 
 {% if articles %}
-
- {% comment %} {% for article in articles %}  {% endcomment %}
-{% comment %} <div class="row"> {% endcomment %}
   <div class="container-fluid">  
-  <div class="container">
-
-      <div class="row">
-         {% for article in articles %} 
-        {% comment %} <div class="col-auto col-md-4"> 
-        <div class="column"> 
-          <div class="card">
-            <img src="{{article.article_image.url}}" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-                <span class="badge bg-primary">TECHNOLOGY</span>
-              <h5 class="card-title">Why is the Tesla Cybertruck designed the way it is?</h5>
-              <p class="card-text">{{article.content|safe|truncatewords:10}}</p>
-              <a href="{% url 'detail' article.slug %}" class ="btn btn-danger my-3">Lire Plus</a>
-            </div>
-          </div> {% endcomment %}
-          <div class="col-lg-4 col-sm-6 mb-4 hover-animate">
-            <div class="card shadow border-0 h-100">
-              <a href="{% url 'detail' article.slug %}">
-                <img class="img-fluid card-img-top" style="height: 170px" src="{{article.article_image.url}}" alt="..."/></a>
-              <div class="card-body"><a class="text-uppercase text-muted text-sm letter-spacing-2" href="#">
-                {{article.author.username}} </a>
+    <div class="row">
+      {% for article in articles %} 
+        <div class="col-lg-4 col-sm-6 mb-4 mt-4 hover-animate">
+          <div class="card shadow border-0 h-100">
+            <a href="{% url 'detail' article.slug %}">
+              <img class="img-fluid card-img-top" style="height: 170px" src="{{article.article_image.url}}" alt="..."/></a>
+            <div class="card-body"><a class="text-uppercase text-muted text-sm letter-spacing-2" href="#">
+              {{article.author.username}} </a>
+              <h6 class="my-2"><a class="text-dark" href="">
+                {{article.title}}          </a></h6>
                 <h6 class="my-2"><a class="text-dark" href="">
-                 {{article.title}}          </a></h6>
-                 <h6 class="my-2"><a class="text-dark" href="">
-                  {{article.category}}          </a></h6>
-                <p class="text-gray-500 text-sm my-3"><i class="far fa-clock mr-2"></i>
-                  {{article.created_date}}</p>
-                <p class="my-2 text-muted text-sm">
-                  {{article.content|safe|truncatewords:10}}
-                </p>
-              
-                <a class="btn btn-link pl-0"href="{% url 'detail' article.slug %}">Read more<i class="fa fa-long-arrow-alt-right ml-2"></i></a> 
-              </div>
+                {{article.category}}          </a></h6>
+              <p class="text-gray-500 text-sm my-3"><i class="far fa-clock mr-2"></i>
+                {{article.created_date}}</p>
+              <p class="my-2 text-muted text-sm">
+                {{article.content|safe|truncatewords:10}}
+              </p>
+              <a class="btn btn-link pl-0" style="color: #82d616" href="{% url 'detail' article.slug %}">Read more<i class="fa fa-long-arrow-alt-right ml-2"></i></a> 
             </div>
           </div>
-          {% endfor %}
         </div>
+      {% endfor %}
+    </div>
+  </div>
+{% else %}
+<div class="container">
+  <div class ="row">
+    <div class="col-md-12">
+      <div class="alert alert-danger bg-none">
+        Aucun posts disponibles
       </div>
     </div>
   </div>
-        {% comment %} <div class="col">
-          <div class="card">
-            <img src="./img/img2.jpg" class="card-img-top  img-fluid" alt="...">
-            <div class="card-body">
-                <span class="badge bg-success">POPULAR</span>
-              <h5 class="card-title">How to Keep Going When You Don’t Know What’s Next.</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, ullam!</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="./img/img3.jpg" class="card-img-top  img-fluid" alt="...">
-            <div class="card-body">
-                <span class="badge bg-danger">Design</span>
-              <h5 class="card-title">10 Rules of Dashboard Design.</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, ullam!</p>
-            </div>
-          </div>
-        </div> {% endcomment %}
-       
-      {% comment %} </div>
-    </div> {% endcomment %}
-
-    <!-- Post Content Column -->
-    {% comment %} <div class="col-lg-8">
-
-      <!-- Title -->
-      <a href="{% url 'detail' article.slug %}"><h2 class="mt-4">{{article.title}}</h2></a> 
-        
-      <!-- Author -->
-      <p class="lead">
-        
-        {{article.author.username}} tarafından yayınlandı
-      </p>
-
-      <hr>
-
-      <!-- Date/Time -->
-      <p>{{article.created_date}}</p>
-      <hr>
-      <!-- Preview Image -->
-      {% if article.article_image %}
-      <a href="{% url 'detail' article.slug %}"><img class="img-fluid rounded" src="{{article.article_image.url}}" alt=""></a>
-      {% endif %}
-     
-
-      <hr>
-
-      <!-- Post Content -->
-      <p class="lead">
-          {{article.content|safe|truncatewords:50}}
-      </p>
-
-      <a href="{% url 'detail' article.slug %}" class ="btn btn-danger my-3">Devamını Oku</a>
-      <hr>
-         
-        </div>
-      </div>
-      </div> {% endcomment %}
-
-{% comment %} {% endfor %} {% endcomment %}
-
-
-{% else %}
-<div class ="row">
-    
-    <div class="col-md-10 offset-md-3">
-        <div class="col-lg-8">
-<div class = "alert alert-danger">
-   Aucun posts disponibles
-</div>
-</div>
-</div>
 </div>
 {% endif %}
-</div>
 
 {% endblock content %}

@@ -1,11 +1,59 @@
-{% extends '_partials/base.html' %}
+{% extends '_partials/base1.html' %}
 {% load static %}
 
 {% load crispy_forms_tags %} 
 
 {% block content %}
+<nav class="navbar navbar-main navbar-expand-lg shadow-none px-0 mx-4 " id="navbarBlur" navbar-scroll="true">
+  <div class="container-fluid py-1 px-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Profile</li>
+      </ol>
+      <h6 class="font-weight-bolder mb-0">Profile</h6>
+    </nav>
+    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+      <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+        
+      </div>
+      <ul class="navbar-nav  justify-content-end">
+        <li class="nav-item d-flex align-items-center">
+          <a class="btn btn-outline-success btn-sm mb-0 me-3" href="">{{request.user.username}}</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          {% comment %} <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+            <i class="fa fa-user me-sm-1"></i>
+            <span class="d-sm-inline d-none">Sign In</span>
+          </a> {% endcomment %}
+          <img src="{{user.profile.profile_image.url}}" style="border: 1px solid white; border-radius: 10px; width: 35px; height: 35px" class="mr-3">
+       </li>
+        {% comment %} <li class="nav-item d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+            <i class="fa fa-user me-sm-1"></i>
+            <span class="d-sm-inline d-none">Sign In</span>
+          </a>
+        </li> {% endcomment %}
+        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+ </nav>
+ <hr class="horizontal dark mt-0">
+
+
+
+
 <!--Inner Header Start-->
-<section class="wf100 p100 inner-header" style="margin-bottom: 50px">
+{% comment %} <section class="wf100 p100 inner-header" style="margin-bottom: 50px">
     <div class="container">
        <h1>Profile</h1>
        <ul>
@@ -13,15 +61,14 @@
           <li><a href="#">Profile</a></li>
        </ul>
     </div>
-  </section>
+</section> {% endcomment %}
   <!--Inner Header End-->
-  <div class="container">
-  {% comment %} <h3>Kontrol Paneli</h3> {% endcomment %}
+{% comment %} <div class="container">
   <div class="section-title-2" style="margin-bottom: 30px">
     <h5>Profile</h5>
     <h2>Modifier le Profile</h2>
   </div>
-</div>
+</div> {% endcomment %}
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
@@ -31,12 +78,12 @@
         </div>           {% endcomment %}
 
         <!-- Main Content Here -->
-        <div class="row">
-          <div class="col-lg-2"></div>
+        <div class="row justify-content-between m-4">
+          {% comment %} <div class="col-lg-2"></div> {% endcomment %}
           <div class="col-lg-3 my-5">
             <img src="{{user.profile.profile_image.url}}" class="rounded float-right" height="300px" width="300px">
           </div>
-          <div class="card o-hidden border-0 shadow-lg my-5 col-lg-5">
+          <div class="card o-hidden border-0 shadow-lg my-5 col-lg-8">
             <div class="card-body">
                 <h2>{{user.first_name}} {{user.last_name}}</h2>
                 <p><strong>Username: </strong> {{user.username}} </p>
@@ -46,7 +93,7 @@
                 <p><strong>Speciality: </strong> {{user.profile.speciality}} </p>
                 <p><strong>Phone Number: </strong> {{user.profile.phone_number}} </p>
                 <p><strong>DOB: </strong> {{user.profile.birth_date}} </p>
-                <a href="{% url 'profile-update' %}" class="btn btn-sm btn-primary shadow-sm">Update Profile</a>
+                <a href="{% url 'profile-update' %}" style="background-color: #82d616" class="btn btn-sm btn-primary shadow-sm">Update Profile</a>
             </div>
           </div>
         </div>

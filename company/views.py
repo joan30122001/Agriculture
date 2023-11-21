@@ -115,8 +115,8 @@ def user_register(request):
                     form.cleaned_data['email'],
                     form.cleaned_data['password']
                 )
-                user.first_name = form.cleaned_data['first_name']
-                user.last_name = form.cleaned_data['last_name']
+                # user.first_name = form.cleaned_data['first_name']
+                # user.last_name = form.cleaned_data['last_name']
                 user.phone_number = form.cleaned_data['phone_number']
                 user.save()
                
@@ -124,7 +124,7 @@ def user_register(request):
                 login(request, user)
                
                 # redirect to accounts page:
-                return redirect('home')
+                return redirect('dashboard')
 
    # No post data availabe, let's just show the page.
     else:
@@ -259,8 +259,14 @@ def articles(request):
     
 def dashboard(request):
     articles = Article.objects.filter(author = request.user)
+    articles_count = Article.objects.filter(author = request.user).count()
+    all_article_count = Article.objects.all().count()
+    all_profile_count = Profile.objects.all().count()
     context = {
-        "articles":articles
+        "articles":articles,
+        "articles_count":articles_count,
+        "all_article_count":all_article_count,
+        "all_profile_count":all_profile_count,
     }
     return render(request,"company/dashboard.html",context)
 
@@ -374,3 +380,29 @@ def profile_posts(request, profile_id):
 #     else:
 #         messages.error(request, "Verification Failed.")
 #     return redirect('initiate-payment')
+
+
+
+from django.views.generic.base import TemplateView
+from django.conf import settings
+import stripe
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
+
+class InitiatePayment(TemplateView):
+    template_name = 'company/initiate_payment.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['key'] = settings.STRIPE_PUBLISHABLE_KEY
+        return context
+
+def charge(request):
+    if request.method == 'POST':
+        charge = stripe.Charge.create(
+            amount=50,
+            currency='usd',
+            description='Payment',
+            source=request.POST['stripeToken']
+        )
+        return render(request, 'company/charge.html')

@@ -1,0 +1,57 @@
+{% extends '_partials/base1.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<nav class="navbar navbar-main navbar-expand-lg shadow-none px-0 mx-4 " id="navbarBlur" navbar-scroll="true">
+    <div class="container-fluid py-1 px-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+          <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+          <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Initiate Payment</li>
+        </ol>
+        <h6 class="font-weight-bolder mb-0">Initiate Payment</h6>
+      </nav>
+      <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          
+        </div>
+        <ul class="navbar-nav  justify-content-end">
+          <li class="nav-item d-flex align-items-center">
+            <a class="btn btn-outline-success btn-sm mb-0 me-3" href="">{{request.user.username}}</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <img src="{{user.profile.profile_image.url}}" style="border: 1px solid white; border-radius: 10px; width: 35px; height: 35px" class="mr-3">
+         </li>
+          <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+            <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+              <div class="sidenav-toggler-inner">
+                <i class="sidenav-toggler-line"></i>
+                <i class="sidenav-toggler-line"></i>
+                <i class="sidenav-toggler-line"></i>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+   </nav>
+   <hr class="horizontal dark mt-0">
+
+
+<div class="container mb-4">
+    <h2>Buy for 50$</h2>
+    <form action = "{% url 'charge' %}" method="post">
+        {% csrf_token %}
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key = "{{ key }}"
+            data-description = "Payment"
+            data-amount = "50"
+            data-locale = "auto">
+        </script>
+    </form>
+</div>
+
+
+{% endblock content %}
