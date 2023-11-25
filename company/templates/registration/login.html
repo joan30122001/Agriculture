@@ -13,6 +13,14 @@
     <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
     <link href="{% static 'css/all.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/slick.css' %}" rel="stylesheet">
+
+    <style>
+        @media (max-width: 767px) {
+            .d-md-block .col-md-6.d-none {
+                display: none;
+            }
+        }
+    </style>
   </head>  
 
 
@@ -72,8 +80,8 @@
         <div class="col col-xl-10">
           <div class="card" >
             <div class="row g-0">
-              <div class="col-md-6 col-lg-5 d-none d-md-block">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+              <div class="col-md-6 col-lg-5 d-md-block d-none">
+                <img src="{% static 'images/login-image.jpg' %}"
                   alt="login form" class="img-fluid" style="height: 100%" />
               </div>
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
@@ -167,7 +175,7 @@
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script> 
 <script src="{% static 'js/jquery-migrate-1.4.1.min.js' %}"></script> 
 <script src="{% static 'js/popper.min.js' %}"></script> 
-<script src="{% static 'js/bootstrap.min.js"></script> 
+<script src="{% static 'js/bootstrap.min.js' %}"></script> 
 <script src="{% static 'js/owl.carousel.min.js' %}"></script> 
 <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script> 
 <script src="{% static 'js/isotope.min.js' %}"></script> 

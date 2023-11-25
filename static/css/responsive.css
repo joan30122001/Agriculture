@@ -258,7 +258,7 @@ ul.topnav-right {
 	width: 100%;
 }
 ul.participants li strong, .ser-txt span.aicon, .slider-caption a {
-	display: none;
+	display: block;
 }
 .home-services {
 	padding: 15px;
